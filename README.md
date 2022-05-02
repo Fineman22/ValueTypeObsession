@@ -46,7 +46,7 @@ The code also features validation, done by overriding the validate method, this 
 
 The objects are automatically converted from and to JSON when using Newtonsoft JSON:
 
-    new { Age = new Age(10)} // json equivalent: { Age = 10 }
+    new { Age = new Age(10); } // json equivalent: "{ Age = 10 }"
 
 When using System.Text.Json you need to decorate your object like so, rest is automatic:
 
