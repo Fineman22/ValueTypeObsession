@@ -1,7 +1,7 @@
 # ValueTypeObsession
 Code that shows how to get rid of value types instead of classes
 
-This code should be used as the following:
+This code should be used like this:
 
     public class Age : RepresentedBy<int, GeneralIdentifier>
     {
