@@ -22,6 +22,9 @@ Comparing objects is possible:
 
 Hashcodes are also overwritten, so feel free to use them as keys in dictionaries.
     
+    Dictionary<Age, char> dictionary = new Dictionary<Age, char>() // works like you would expect
+    HashSet<Age> set = new HashSet<Age>() // works like you would expect
+
 The code also features validation, done by overriding the validate method, this will make sure your object never has a wrong value:
 
     public class Age : RepresentedBy<int, GeneralIdentifier>
