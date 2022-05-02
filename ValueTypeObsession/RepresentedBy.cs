@@ -31,6 +31,9 @@ namespace ValueTypeObsession
             if (ReferenceEquals(this, obj))
                 return true;
 
+            if (obj is TValue objTValue)
+                return objTValue.Equals(Value);
+
             return obj.GetType() == GetType() 
                 && Equals((RepresentedBy<TValue, TThis>)obj);
         }

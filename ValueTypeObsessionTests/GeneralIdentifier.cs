@@ -17,7 +17,6 @@ namespace ValueTypeObsessionTests
             {
                 throw new ArgumentException("Value cant be 42");
             }
-            base.Validate();
         }
     }
 }
