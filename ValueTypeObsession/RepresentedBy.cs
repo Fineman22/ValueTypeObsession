@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using NewtonSoftJsonConverter = Newtonsoft.Json.JsonConverterAttribute;
 
 namespace ValueTypeObsession
 {
     [NewtonSoftJsonConverter(typeof(RepresentedByJsonConverterNewtonSoft))]
+    [DebuggerDisplay("{Value}")]
     public class RepresentedBy<TValue, TThis> : RepresentedByBase where TThis : RepresentedBy<TValue, TThis>
     {
         public RepresentedBy(TValue value)

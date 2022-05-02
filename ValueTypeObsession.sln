@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueTypeObsession", "ValueTypeObsession\ValueTypeObsession.csproj", "{BCF4C971-C57F-49DB-B7E1-9B8EBF23CA17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueTypeObsession", "ValueTypeObsession\ValueTypeObsession.csproj", "{BCF4C971-C57F-49DB-B7E1-9B8EBF23CA17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueTypeObsessionTests", "ValueTypeObsessionTests\ValueTypeObsessionTests.csproj", "{76534461-19FB-4695-94C3-ADBEAB564A99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueTypeObsessionTests", "ValueTypeObsessionTests\ValueTypeObsessionTests.csproj", "{76534461-19FB-4695-94C3-ADBEAB564A99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuxiliaryItems", "AuxiliaryItems", "{2F226387-8238-4F66-A34F-FAE0BEB99B69}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

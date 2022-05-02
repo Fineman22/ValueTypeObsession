@@ -1,7 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using JsonConverterSystemText = System.Text.Json.JsonSerializer;
 using JsonConverterNewtonSoft = Newtonsoft.Json.JsonConvert;
+using System;
+using Microsoft.CSharp.RuntimeBinder;
+using System.Collections.Generic;
 
 namespace ValueTypeObsessionTests
 {
@@ -79,6 +81,38 @@ namespace ValueTypeObsessionTests
             int obj2 = 1000;
             Assert.IsTrue(obj.GetHashCode() == obj2.GetHashCode());
             Assert.IsTrue(obj2.GetHashCode() == obj.GetHashCode());
+        }
+
+        [TestMethod]
+        public void ShouldWorkInAHashTable()
+        {
+            HashSet<Age> set = new HashSet<Age>
+            {
+                new Age(42),
+                new Age(50)
+            };
+            Assert.IsTrue(set.Contains(new Age(42)));
+            Assert.IsTrue(!set.Contains(new Age(43)));
+        }
+
+        [TestMethod]
+        public void ShouldWorkInADictionary()
+        {
+            Dictionary<Age, char> dictionary = new Dictionary<Age, char>
+            {
+                { new Age(42), 'a' },
+                { new Age(50), 'a' },
+            };
+            Assert.IsTrue(dictionary.ContainsKey(new Age(42)));
+            Assert.IsTrue(!dictionary.ContainsKey(new Age(43)));
+        }
+
+        [TestMethod]
+        public void AssignmentDoesNotWorkForDifferentDefinedTypes()
+        {
+            GeneralIdentifier obj = new GeneralIdentifier(1000);
+            Age age;
+            Assert.ThrowsException<RuntimeBinderException>(() => age = (dynamic)obj);
         }
 
         private class GeneralIdentifierHolderClass
